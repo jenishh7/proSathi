@@ -1,0 +1,52 @@
+{
+  "notifications": [
+    {
+      "id": 1,
+      "title": "New User Registration",
+      "message": "A new user has registered on your platform",
+      "type": "info",
+      "timestamp": "2024-03-31 10:30:00",
+      "read": false
+    },
+    {
+      "id": 2,
+      "title": "Project Milestone Reached",
+      "message": "You have successfully reached 50% completion on Project Alpha",
+      "type": "success",
+      "timestamp": "2024-03-31 09:15:00",
+      "read": false
+    },
+    {
+      "id": 3,
+      "title": "System Maintenance Alert",
+      "message": "Scheduled maintenance will be performed on April 2, 2024",
+      "type": "warning",
+      "timestamp": "2024-03-30 14:45:00",
+      "read": true
+    },
+    {
+      "id": 4,
+      "title": "Payment Received",
+      "message": "Payment of $5,000 has been received from Acme Corporation",
+      "type": "success",
+      "timestamp": "2024-03-30 11:20:00",
+      "read": true
+    },
+    {
+      "id": 5,
+      "title": "Meeting Reminder",
+      "message": "Team standup meeting in 30 minutes at Conference Room A",
+      "type": "info",
+      "timestamp": "2024-03-29 14:30:00",
+      "read": true
+    },
+    {
+      "id": 6,
+      "title": "Security Alert",
+      "message": "Unusual login activity detected from IP: 192.168.1.100",
+      "type": "warning",
+      "timestamp": "2024-03-29 10:15:00",
+      "read": true
+    }
+  ]
+}

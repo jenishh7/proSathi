@@ -1,0 +1,52 @@
+{
+  "analyticsData": {
+    "overview": [
+      { "month": "Jan", "users": 4000, "revenue": 2400, "growth": 24 },
+      { "month": "Feb", "users": 3000, "revenue": 1398, "growth": 22 },
+      { "month": "Mar", "users": 2000, "revenue": 9800, "growth": 29 },
+      { "month": "Apr", "users": 2780, "revenue": 3908, "growth": 20 },
+      { "month": "May", "users": 1890, "revenue": 4800, "growth": 22 },
+      { "month": "Jun", "users": 2390, "revenue": 3800, "growth": 25 },
+      { "month": "Jul", "users": 3490, "revenue": 4300, "growth": 21 }
+    ],
+    "userGrowth": [
+      {
+        "week": "Week 1",
+        "newUsers": 120,
+        "activeUsers": 3400,
+        "engagement": 65
+      },
+      {
+        "week": "Week 2",
+        "newUsers": 150,
+        "activeUsers": 3600,
+        "engagement": 70
+      },
+      {
+        "week": "Week 3",
+        "newUsers": 180,
+        "activeUsers": 3900,
+        "engagement": 75
+      },
+      {
+        "week": "Week 4",
+        "newUsers": 200,
+        "activeUsers": 4200,
+        "engagement": 80
+      }
+    ],
+    "conversionMetrics": [
+      { "channel": "Organic", "visits": 8502, "conversions": 1842 },
+      { "channel": "Direct", "visits": 6254, "conversions": 1562 },
+      { "channel": "Referral", "visits": 4235, "conversions": 963 },
+      { "channel": "Email", "visits": 3684, "conversions": 982 },
+      { "channel": "Social", "visits": 2748, "conversions": 612 }
+    ]
+  },
+  "topMetrics": [
+    { "id": 1, "name": "Conversion Rate", "value": "22.5%", "trend": "+2.5%" },
+    { "id": 2, "name": "Bounce Rate", "value": "38.2%", "trend": "-1.2%" },
+    { "id": 3, "name": "Avg. Session", "value": "3m 45s", "trend": "+0.5m" },
+    { "id": 4, "name": "Revenue/User", "value": "$45.60", "trend": "+$5.20" }
+  ]
+}

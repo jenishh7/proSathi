@@ -1,0 +1,69 @@
+{
+  "stats": [
+    {
+      "id": 1,
+      "label": "Total Users",
+      "value": "1,234",
+      "change": "+12.5%",
+      "icon": "👥"
+    },
+    {
+      "id": 2,
+      "label": "Active Projects",
+      "value": "42",
+      "change": "+8.2%",
+      "icon": "📊"
+    },
+    {
+      "id": 3,
+      "label": "Completed Tasks",
+      "value": "156",
+      "change": "+23.1%",
+      "icon": "✅"
+    },
+    {
+      "id": 4,
+      "label": "Team Members",
+      "value": "28",
+      "change": "+5.7%",
+      "icon": "👨‍💼"
+    }
+  ],
+  "recentActivity": [
+    {
+      "id": 1,
+      "title": "Project Alpha Launched",
+      "description": "Successfully deployed the new project to production",
+      "time": "2 hours ago",
+      "status": "success"
+    },
+    {
+      "id": 2,
+      "title": "Team Meeting Scheduled",
+      "description": "Quarterly review meeting set for next Monday",
+      "time": "5 hours ago",
+      "status": "info"
+    },
+    {
+      "id": 3,
+      "title": "New Feature Released",
+      "description": "Advanced analytics dashboard is now available",
+      "time": "1 day ago",
+      "status": "success"
+    },
+    {
+      "id": 4,
+      "title": "Client Feedback Received",
+      "description": "Positive feedback on recent updates from top clients",
+      "time": "2 days ago",
+      "status": "success"
+    },
+    {
+      "id": 5,
+      "title": "System Maintenance",
+      "description": "Infrastructure upgrade completed successfully",
+      "time": "3 days ago",
+      "status": "warning"
+    }
+  ]
+}
