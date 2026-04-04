@@ -1,0 +1,106 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "title": "Quarterly Performance Report",
+      "description": "Comprehensive analysis of Q1 performance metrics",
+      "date": "2024-03-31",
+      "type": "Performance",
+      "status": "Completed",
+      "views": 234,
+      "downloads": 45
+    },
+    {
+      "id": 2,
+      "title": "Customer Satisfaction Survey",
+      "description": "Results from customer feedback survey for current quarter",
+      "date": "2024-03-30",
+      "type": "Survey",
+      "status": "Completed",
+      "views": 189,
+      "downloads": 32
+    },
+    {
+      "id": 3,
+      "title": "Marketing Campaign Analysis",
+      "description": "Detailed analysis of marketing campaigns and their ROI",
+      "date": "2024-03-29",
+      "type": "Marketing",
+      "status": "Completed",
+      "views": 156,
+      "downloads": 28
+    },
+    {
+      "id": 4,
+      "title": "Sales Pipeline Report",
+      "description": "Overview of current sales opportunities and pipeline status",
+      "date": "2024-03-28",
+      "type": "Sales",
+      "status": "In Progress",
+      "views": 234,
+      "downloads": 18
+    },
+    {
+      "id": 5,
+      "title": "Team Productivity Metrics",
+      "description": "Analysis of team productivity and resource utilization",
+      "date": "2024-03-27",
+      "type": "Productivity",
+      "status": "Completed",
+      "views": 198,
+      "downloads": 42
+    },
+    {
+      "id": 6,
+      "title": "Budget vs Actual Analysis",
+      "description": "Monthly budget comparison with actual spending",
+      "date": "2024-03-26",
+      "type": "Finance",
+      "status": "Completed",
+      "views": 267,
+      "downloads": 89
+    }
+  ],
+  "salesData": [
+    {
+      "id": 1,
+      "client": "Acme Corporation",
+      "product": "Enterprise Plan",
+      "amount": "$15,000",
+      "date": "Mar 15, 2024",
+      "status": "Closed"
+    },
+    {
+      "id": 2,
+      "client": "Tech Innovations",
+      "product": "Professional Plan",
+      "amount": "$8,500",
+      "date": "Mar 14, 2024",
+      "status": "Closed"
+    },
+    {
+      "id": 3,
+      "client": "StartUp Hub",
+      "product": "Starter Plan",
+      "amount": "$2,999",
+      "date": "Mar 13, 2024",
+      "status": "Closed"
+    },
+    {
+      "id": 4,
+      "client": "Global Services Ltd",
+      "product": "Enterprise Plan",
+      "amount": "$20,000",
+      "date": "Mar 12, 2024",
+      "status": "Pending"
+    },
+    {
+      "id": 5,
+      "client": "Digital Future",
+      "product": "Professional Plan",
+      "amount": "$9,500",
+      "date": "Mar 11, 2024",
+      "status": "Closed"
+    }
+  ]
+}

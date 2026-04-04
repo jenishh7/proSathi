@@ -1,0 +1,29 @@
+{
+  "settingsData": {
+    "account": {
+      "email": "test@pro.com",
+      "phone": "9876543210",
+      "twoFactorAuth": true,
+      "activityLogging": true
+    },
+    "notifications": {
+      "emailNotifications": true,
+      "pushNotifications": false,
+      "smsNotifications": true,
+      "weeklyDigest": true,
+      "projectUpdates": true,
+      "mentionAlerts": true
+    },
+    "privacy": {
+      "profileVisibility": "public",
+      "activityVisible": true,
+      "allowMessages": true,
+      "dataCollection": false
+    },
+    "appearance": {
+      "theme": "light",
+      "language": "English",
+      "timezone": "UTC-5"
+    }
+  }
+}

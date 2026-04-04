@@ -1,0 +1,58 @@
+{
+  "userProfile": {
+    "id": 1,
+    "email": "test@pro.com",
+    "name": "John Doe",
+    "phone": "9876543210",
+    "role": "Project Manager",
+    "department": "Product Development",
+    "joinedDate": "2023-06-15",
+    "avatar": "JD",
+    "bio": "Experienced project manager with 5+ years in tech industry",
+    "location": "San Francisco, CA",
+    "website": "https://johndoe.com",
+    "stats": {
+      "projectsCompleted": 24,
+      "tasksCompleted": 156,
+      "teamSize": 12,
+      "performanceRating": 4.8
+    }
+  },
+  "activityLog": [
+    {
+      "id": 1,
+      "action": "Logged In",
+      "timestamp": "2024-03-31 10:30:00",
+      "device": "Chrome on Windows",
+      "ip": "192.168.1.101"
+    },
+    {
+      "id": 2,
+      "action": "Updated Profile",
+      "timestamp": "2024-03-30 15:20:00",
+      "device": "Safari on iPhone",
+      "ip": "192.168.1.102"
+    },
+    {
+      "id": 3,
+      "action": "Created New Project",
+      "timestamp": "2024-03-30 11:45:00",
+      "device": "Chrome on Windows",
+      "ip": "192.168.1.101"
+    },
+    {
+      "id": 4,
+      "action": "Completed Task",
+      "timestamp": "2024-03-29 16:30:00",
+      "device": "Firefox on Mac",
+      "ip": "192.168.1.103"
+    },
+    {
+      "id": 5,
+      "action": "Invited Team Member",
+      "timestamp": "2024-03-29 09:15:00",
+      "device": "Chrome on Windows",
+      "ip": "192.168.1.101"
+    }
+  ]
+}
