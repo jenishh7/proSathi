@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { showToast } from "../components/ToastNotification";
 import { getValidationError } from "../utils/validation";
 import loginData from "../data/login.json";
-import { Eye, EyeOff, AlertCircle } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -65,42 +65,41 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-brand-bg flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden border-t-4 border-brand-orange">
+    <div className="min-h-screen bg-gradient-to-br from-brand-bg to-gray-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden border border-gray-100 backdrop-blur-sm">
         {/* Header */}
-        <div className="bg-brand-navy px-8 py-8 text-white">
-          <h1 className="text-3xl font-bold mb-2">ProSathi</h1>
-          <p className="text-gray-300">Professional Dashboard Login</p>
+        <div className="bg-gradient-to-r from-brand-navy to-brand-navy/90 px-8 py-10 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/10 to-transparent"></div>
+          <div className="relative z-10">
+            <h1 className="text-3xl font-bold mb-2 tracking-tight">ProSathi</h1>
+            <p className="text-gray-200 text-sm">
+              Professional Dashboard Login
+            </p>
+          </div>
         </div>
 
         {/* Form Content */}
-        <div className="p-8">
+        <div className="p-8 space-y-6">
           {/* General Error Message */}
           {generalError && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-              <AlertCircle
-                className="text-red-600 mt-0.5 flex-shrink-0"
-                size={20}
-              />
-              <div>
-                <p className="font-semibold text-red-800">{generalError}</p>
-              </div>
+            <div className="text-center">
+              <p className="text-red-600 text-sm font-medium">{generalError}</p>
             </div>
           )}
 
           {/* Demo Credentials Info */}
-          <div className="bg-brand-bg border border-brand-navy border-opacity-20 rounded-lg p-4 mb-6">
-            <p className="text-xs font-bold text-brand-navy mb-2">
+          <div className="bg-gradient-to-r from-brand-bg to-gray-50 border border-gray-200 rounded-xl p-4 shadow-sm">
+            <p className="text-xs font-semibold text-brand-navy mb-2">
               Demo Credentials:
             </p>
-            <p className="text-xs text-gray-700">📧 test@pro.com</p>
-            <p className="text-xs text-gray-700">🔐 password123</p>
+            <p className="text-xs text-gray-600">📧 test@pro.com</p>
+            <p className="text-xs text-gray-600">🔐 password123</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
             {/* Email Field */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-gray-700">
                 Email Address
               </label>
               <input
@@ -109,28 +108,20 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 onBlur={() => handleBlur("email")}
                 placeholder="your@email.com"
-                className={`w-full px-4 py-3 border rounded-lg outline-none transition focus:ring-2 ${
+                className={`w-full px-4 py-3 border rounded-xl outline-none transition-all duration-200 focus:ring-2 focus:ring-offset-1 ${
                   touched.email && emailError
-                    ? "border-red-400 focus:ring-red-200 bg-red-50"
-                    : "border-gray-300 focus:ring-brand-orange focus:ring-opacity-50"
+                    ? "border-red-300 focus:ring-red-200 bg-red-50/50"
+                    : "border-gray-200 focus:ring-brand-orange/50 focus:border-brand-orange"
                 }`}
               />
               {touched.email && emailError && (
-                <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded flex items-start gap-2">
-                  <AlertCircle
-                    className="text-red-600 mt-0.5 flex-shrink-0"
-                    size={16}
-                  />
-                  <p className="text-sm font-medium text-red-700">
-                    {emailError}
-                  </p>
-                </div>
+                <p className="text-red-600 text-sm font-medium">{emailError}</p>
               )}
             </div>
 
             {/* Password Field */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <div className="space-y-2">
+              <label className="block text-sm font-semibold text-gray-700">
                 Password
               </label>
               <div className="relative">
@@ -140,30 +131,24 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   onBlur={() => handleBlur("password")}
                   placeholder="••••••••"
-                  className={`w-full px-4 py-3 border rounded-lg outline-none transition focus:ring-2 ${
+                  className={`w-full px-4 py-3 pr-12 border rounded-xl outline-none transition-all duration-200 focus:ring-2 focus:ring-offset-1 ${
                     touched.password && passwordError
-                      ? "border-red-400 focus:ring-red-200 bg-red-50"
-                      : "border-gray-300 focus:ring-brand-orange focus:ring-opacity-50"
+                      ? "border-red-300 focus:ring-red-200 bg-red-50/50"
+                      : "border-gray-200 focus:ring-brand-orange/50 focus:border-brand-orange"
                   }`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
               {touched.password && passwordError && (
-                <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded flex items-start gap-2">
-                  <AlertCircle
-                    className="text-red-600 mt-0.5 flex-shrink-0"
-                    size={16}
-                  />
-                  <p className="text-sm font-medium text-red-700">
-                    {passwordError}
-                  </p>
-                </div>
+                <p className="text-red-600 text-sm font-medium">
+                  {passwordError}
+                </p>
               )}
             </div>
 
@@ -171,21 +156,26 @@ const Login = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-brand-orange to-yellow-500 text-white py-3 rounded-lg font-bold hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-brand-orange to-brand-orange/90 hover:from-brand-orange/90 hover:to-brand-orange text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-brand-orange/25 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none flex items-center justify-center gap-3 group"
             >
               {isLoading ? (
                 <>
                   <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                  Logging in...
+                  <span>Signing in...</span>
                 </>
               ) : (
-                "Sign In"
+                <>
+                  <span>Sign In</span>
+                  <div className="w-0 group-hover:w-4 transition-all duration-200 overflow-hidden">
+                    →
+                  </div>
+                </>
               )}
             </button>
           </form>
 
           {/* Footer */}
-          <p className="text-center text-gray-600 mt-6 text-xs">
+          <p className="text-center text-gray-500 mt-8 text-sm">
             Contact your administrator for access to the system
           </p>
         </div>
