@@ -1,11 +1,14 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTheme } from "../context/ThemeContext";
 
 /**
  * Toast Notification Provider Component
  * Wrap your app with this component to enable toast notifications
  */
 export const ToastProvider = ({ children }) => {
+  const { theme } = useTheme();
+
   return (
     <>
       {children}
@@ -19,7 +22,12 @@ export const ToastProvider = ({ children }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme={theme}
+        toastClassName={() =>
+          "relative flex p-4 min-h-10 rounded-lg justify-between overflow-hidden cursor-pointer shadow-lg border border-gray-200 dark:border-gray-700"
+        }
+        bodyClassName={() => "text-sm font-medium"}
+        progressClassName="fancy-progress-bar"
       />
     </>
   );
