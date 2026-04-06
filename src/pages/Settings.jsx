@@ -27,42 +27,44 @@ const Settings = () => {
       <div className="space-y-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-brand-navy mb-2">Settings</h1>
-          <p className="text-gray-600">
+          <h1 className="text-3xl font-bold text-brand-navy dark:text-white mb-2">
+            Settings
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400">
             Manage your account preferences and settings.
           </p>
         </div>
 
         {/* Account Settings */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50 flex items-center gap-2">
+        <div className="card overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center gap-2">
             <Lock className="text-brand-orange" size={20} />
-            <h2 className="text-lg font-bold text-brand-navy">
+            <h2 className="text-lg font-bold text-brand-navy dark:text-white">
               Account Settings
             </h2>
           </div>
           <div className="p-6 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   value={settings.account.email}
                   readOnly
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Phone
                 </label>
                 <input
                   type="tel"
                   value={settings.account.phone}
                   readOnly
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400"
                 />
               </div>
             </div>
@@ -75,7 +77,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("account", "twoFactorAuth")}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Enable Two-Factor Authentication
                 </span>
               </label>
@@ -86,7 +88,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("account", "activityLogging")}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Activity Logging
                 </span>
               </label>
@@ -95,10 +97,10 @@ const Settings = () => {
         </div>
 
         {/* Notification Settings */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50 flex items-center gap-2">
+        <div className="card overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center gap-2">
             <Bell className="text-brand-orange" size={20} />
-            <h2 className="text-lg font-bold text-brand-navy">
+            <h2 className="text-lg font-bold text-brand-navy dark:text-white">
               Notification Settings
             </h2>
           </div>
@@ -114,7 +116,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("notifications", key)}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700 capitalize">
+                <span className="font-medium text-gray-700 dark:text-gray-300 capitalize">
                   {key.replace(/([A-Z])/g, " $1").trim()}
                 </span>
               </label>
@@ -123,16 +125,16 @@ const Settings = () => {
         </div>
 
         {/* Privacy Settings */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50 flex items-center gap-2">
+        <div className="card overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center gap-2">
             <Eye className="text-brand-orange" size={20} />
-            <h2 className="text-lg font-bold text-brand-navy">
+            <h2 className="text-lg font-bold text-brand-navy dark:text-white">
               Privacy Settings
             </h2>
           </div>
           <div className="p-6 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Profile Visibility
               </label>
               <select
@@ -146,7 +148,7 @@ const Settings = () => {
                     },
                   })
                 }
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
               >
                 <option>public</option>
                 <option>private</option>
@@ -162,7 +164,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("privacy", "activityVisible")}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Show Activity Status
                 </span>
               </label>
@@ -173,7 +175,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("privacy", "allowMessages")}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Allow Messages
                 </span>
               </label>
@@ -184,7 +186,7 @@ const Settings = () => {
                   onChange={() => toggleSetting("privacy", "dataCollection")}
                   className="w-4 h-4 rounded"
                 />
-                <span className="font-medium text-gray-700">
+                <span className="font-medium text-gray-700 dark:text-gray-300">
                   Allow Data Collection
                 </span>
               </label>
@@ -193,15 +195,17 @@ const Settings = () => {
         </div>
 
         {/* Appearance Settings */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50 flex items-center gap-2">
+        <div className="card overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex items-center gap-2">
             <Globe className="text-brand-orange" size={20} />
-            <h2 className="text-lg font-bold text-brand-navy">Appearance</h2>
+            <h2 className="text-lg font-bold text-brand-navy dark:text-white">
+              Appearance
+            </h2>
           </div>
           <div className="p-6 space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Theme
                 </label>
                 <select
@@ -215,14 +219,14 @@ const Settings = () => {
                       },
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                 >
                   <option>light</option>
                   <option>dark</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Language
                 </label>
                 <select
@@ -236,7 +240,7 @@ const Settings = () => {
                       },
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                 >
                   <option>English</option>
                   <option>Spanish</option>
@@ -244,7 +248,7 @@ const Settings = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Timezone
                 </label>
                 <select
@@ -258,7 +262,7 @@ const Settings = () => {
                       },
                     })
                   }
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                 >
                   <option>UTC-5</option>
                   <option>UTC-6</option>

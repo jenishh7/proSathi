@@ -67,10 +67,10 @@ const Help = () => {
       <div className="space-y-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-brand-navy mb-2">
+          <h1 className="text-3xl font-bold text-brand-navy dark:text-white mb-2">
             Help & Support
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             Find answers and get help with your account.
           </p>
         </div>
@@ -83,67 +83,71 @@ const Help = () => {
               <a
                 key={resource.title}
                 href={resource.link}
-                className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition text-center"
+                className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6 hover:shadow-lg dark:hover:shadow-gray-700 transition text-center"
               >
                 <Icon className="mx-auto text-brand-orange mb-4" size={32} />
-                <h3 className="font-bold text-gray-800 mb-2">
+                <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-2">
                   {resource.title}
                 </h3>
-                <p className="text-sm text-gray-600">{resource.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {resource.description}
+                </p>
               </a>
             );
           })}
         </div>
 
         {/* FAQ */}
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-200 bg-gray-50">
-            <h2 className="text-lg font-bold text-brand-navy">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 overflow-hidden">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
+            <h2 className="text-lg font-bold text-brand-navy dark:text-white">
               Frequently Asked Questions
             </h2>
           </div>
-          <div className="divide-y divide-gray-200">
+          <div className="divide-y divide-gray-200 dark:divide-gray-700">
             {faqs.map((faq, index) => (
               <details
                 key={index}
-                className="p-6 hover:bg-gray-50 transition cursor-pointer group"
+                className="p-6 hover:bg-gray-50 dark:hover:bg-gray-700 transition cursor-pointer group"
               >
-                <summary className="font-semibold text-gray-800 flex items-center justify-between">
+                <summary className="font-semibold text-gray-800 dark:text-gray-200 flex items-center justify-between">
                   {faq.question}
-                  <span className="transform group-open:rotate-180 transition text-gray-400">
+                  <span className="transform group-open:rotate-180 transition text-gray-400 dark:text-gray-500">
                     ▼
                   </span>
                 </summary>
-                <p className="text-gray-600 mt-4">{faq.answer}</p>
+                <p className="text-gray-600 dark:text-gray-400 mt-4">
+                  {faq.answer}
+                </p>
               </details>
             ))}
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-lg font-bold text-brand-navy mb-6">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow dark:shadow-gray-900 p-6">
+          <h2 className="text-lg font-bold text-brand-navy dark:text-white mb-6">
             Still need help?
           </h2>
           <form className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Subject
               </label>
               <input
                 type="text"
                 placeholder="How can we help?"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Message
               </label>
               <textarea
                 placeholder="Describe your issue..."
                 rows="5"
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none resize-none"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange outline-none resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
               ></textarea>
             </div>
             <button

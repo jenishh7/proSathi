@@ -29,8 +29,10 @@ const Notifications = () => {
   if (isLoading) {
     return (
       <MainLayout>
-        <div className="space-y-8">
-          <h1 className="text-2xl font-bold text-brand-navy">Notifications</h1>
+        <div className="space-y-8 animate-fade-in">
+          <h1 className="text-2xl font-bold text-brand-navy dark:text-white">
+            Notifications
+          </h1>
           <SkeletonLoader count={6} type="table" />
         </div>
       </MainLayout>
@@ -60,10 +62,10 @@ const Notifications = () => {
         <div className="mb-8">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold text-brand-navy mb-2">
+              <h1 className="text-3xl font-bold text-brand-navy dark:text-white mb-2">
                 Notifications
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-400">
                 You have{" "}
                 <span className="font-bold text-brand-orange">
                   {unreadCount}
@@ -71,9 +73,7 @@ const Notifications = () => {
                 unread notifications
               </p>
             </div>
-            <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition font-medium">
-              Mark All as Read
-            </button>
+            <button className="btn btn-secondary">Mark All as Read</button>
           </div>
         </div>
 
@@ -82,46 +82,48 @@ const Notifications = () => {
           {notifications.map((notification) => (
             <div
               key={notification.id}
-              className={`rounded-lg p-6 flex items-start justify-between transition ${
+              className={`card transition-all duration-200 ${
                 notification.read
-                  ? "bg-gray-50 border border-gray-200"
-                  : "bg-white border-l-4 border-brand-orange shadow"
+                  ? "bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700"
+                  : "bg-white dark:bg-gray-800 border-l-4 border-brand-orange shadow-md"
               }`}
             >
-              <div className="flex items-start gap-4 flex-1">
-                <div className="mt-1">{getIcon(notification.type)}</div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-bold text-gray-800">
-                      {notification.title}
-                    </h3>
-                    {!notification.read && (
-                      <span className="inline-block w-2 h-2 bg-brand-orange rounded-full"></span>
-                    )}
+              <div className="flex items-start justify-between">
+                <div className="flex items-start gap-4 flex-1">
+                  <div className="mt-1">{getIcon(notification.type)}</div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-bold text-gray-800 dark:text-gray-200">
+                        {notification.title}
+                      </h3>
+                      {!notification.read && (
+                        <span className="inline-block w-2 h-2 bg-brand-orange rounded-full"></span>
+                      )}
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
+                      {notification.message}
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-500">
+                      {notification.timestamp}
+                    </p>
                   </div>
-                  <p className="text-gray-600 text-sm mb-2">
-                    {notification.message}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {notification.timestamp}
-                  </p>
                 </div>
-              </div>
-              <div className="flex gap-2 ml-4">
-                {!notification.read && (
+                <div className="flex gap-2 ml-4">
+                  {!notification.read && (
+                    <button
+                      onClick={() => handleMarkAsRead(notification.id)}
+                      className="btn btn-secondary text-sm"
+                    >
+                      Mark Read
+                    </button>
+                  )}
                   <button
-                    onClick={() => handleMarkAsRead(notification.id)}
-                    className="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition font-medium"
+                    onClick={() => handleDelete(notification.id)}
+                    className="p-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200"
                   >
-                    Mark Read
+                    <Trash2 size={18} />
                   </button>
-                )}
-                <button
-                  onClick={() => handleDelete(notification.id)}
-                  className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
-                >
-                  <Trash2 size={18} />
-                </button>
+                </div>
               </div>
             </div>
           ))}
@@ -129,8 +131,13 @@ const Notifications = () => {
 
         {notifications.length === 0 && (
           <div className="text-center py-12">
-            <Bell size={48} className="mx-auto text-gray-300 mb-4" />
-            <p className="text-gray-600 text-lg">No notifications yet</p>
+            <Bell
+              size={48}
+              className="mx-auto text-gray-300 dark:text-gray-600 mb-4"
+            />
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              No notifications yet
+            </p>
           </div>
         )}
       </div>

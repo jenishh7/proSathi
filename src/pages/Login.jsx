@@ -65,10 +65,10 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-brand-bg to-gray-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden border border-gray-100 backdrop-blur-sm">
+    <div className="min-h-screen bg-gradient-to-br from-brand-bg to-brand-navy-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl w-full max-w-md overflow-hidden border border-gray-100 dark:border-gray-700 backdrop-blur-sm">
         {/* Header */}
-        <div className="bg-gradient-to-r from-brand-navy to-brand-navy/90 px-8 py-10 text-white relative overflow-hidden">
+        <div className="bg-gradient-to-r from-brand-navy-600 to-brand-navy/90 px-8 py-10 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/10 to-transparent"></div>
           <div className="relative z-10">
             <h1 className="text-3xl font-bold mb-2 tracking-tight">ProSathi</h1>
@@ -83,23 +83,29 @@ const Login = () => {
           {/* General Error Message */}
           {generalError && (
             <div className="text-center">
-              <p className="text-red-600 text-sm font-medium">{generalError}</p>
+              <p className="text-red-600 dark:text-red-400 text-sm font-medium">
+                {generalError}
+              </p>
             </div>
           )}
 
           {/* Demo Credentials Info */}
-          <div className="bg-gradient-to-r from-brand-bg to-gray-50 border border-gray-200 rounded-xl p-4 shadow-sm">
-            <p className="text-xs font-semibold text-brand-navy mb-2">
+          <div className="bg-gradient-to-r from-brand-orange-50 to-brand-orange-100 dark:from-gray-800 dark:to-gray-700 border border-brand-orange-200 dark:border-gray-600 rounded-xl p-4 shadow-sm">
+            <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">
               Demo Credentials:
             </p>
-            <p className="text-xs text-gray-600">📧 test@pro.com</p>
-            <p className="text-xs text-gray-600">🔐 password123</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              📧 test@pro.com
+            </p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              🔐 password123
+            </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">
             {/* Email Field */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Email Address
               </label>
               <input
@@ -110,18 +116,20 @@ const Login = () => {
                 placeholder="your@email.com"
                 className={`w-full px-4 py-3 border rounded-xl outline-none transition-all duration-200 focus:ring-2 focus:ring-offset-1 ${
                   touched.email && emailError
-                    ? "border-red-300 focus:ring-red-200 bg-red-50/50"
-                    : "border-gray-200 focus:ring-brand-orange/50 focus:border-brand-orange"
+                    ? "border-red-300 focus:ring-red-200 bg-red-50/50 dark:bg-red-900/20 dark:border-red-600"
+                    : "border-gray-200 dark:border-gray-600 focus:ring-brand-orange/50 focus:border-brand-orange bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                 }`}
               />
               {touched.email && emailError && (
-                <p className="text-red-600 text-sm font-medium">{emailError}</p>
+                <p className="text-red-600 dark:text-red-400 text-sm font-medium">
+                  {emailError}
+                </p>
               )}
             </div>
 
             {/* Password Field */}
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
                 Password
               </label>
               <div className="relative">
@@ -133,20 +141,20 @@ const Login = () => {
                   placeholder="••••••••"
                   className={`w-full px-4 py-3 pr-12 border rounded-xl outline-none transition-all duration-200 focus:ring-2 focus:ring-offset-1 ${
                     touched.password && passwordError
-                      ? "border-red-300 focus:ring-red-200 bg-red-50/50"
-                      : "border-gray-200 focus:ring-brand-orange/50 focus:border-brand-orange"
+                      ? "border-red-300 focus:ring-red-200 bg-red-50/50 dark:bg-red-900/20 dark:border-red-600"
+                      : "border-gray-200 dark:border-gray-600 focus:ring-brand-orange/50 focus:border-brand-orange bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                   }`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
               {touched.password && passwordError && (
-                <p className="text-red-600 text-sm font-medium">
+                <p className="text-red-600 dark:text-red-400 text-sm font-medium">
                   {passwordError}
                 </p>
               )}
@@ -156,7 +164,7 @@ const Login = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-brand-orange to-brand-orange/90 hover:from-brand-orange/90 hover:to-brand-orange text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-brand-orange/25 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none flex items-center justify-center gap-3 group"
+              className="w-full bg-gradient-to-r from-brand-orange-600 to-brand-orange/90 hover:from-brand-orange/90 hover:to-brand-orange-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-brand-orange/25 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none flex items-center justify-center gap-3 group"
             >
               {isLoading ? (
                 <>
@@ -175,7 +183,7 @@ const Login = () => {
           </form>
 
           {/* Footer */}
-          <p className="text-center text-gray-500 mt-8 text-sm">
+          <p className="text-center text-gray-600 dark:text-gray-400 mt-8 text-sm">
             Contact your administrator for access to the system
           </p>
         </div>
