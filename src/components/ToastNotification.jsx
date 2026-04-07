@@ -24,7 +24,9 @@ export const ToastProvider = ({ children }) => {
         pauseOnHover
         theme={theme}
         toastClassName={() =>
-          "relative flex p-4 min-h-10 rounded-lg justify-between overflow-hidden cursor-pointer shadow-lg border border-gray-200 dark:border-gray-700"
+          theme === "dark"
+            ? "relative flex p-4 min-h-10 rounded-lg justify-between overflow-hidden cursor-pointer shadow-lg border border-gray-700 bg-gray-800 text-white"
+            : "relative flex p-4 min-h-10 rounded-lg justify-between overflow-hidden cursor-pointer shadow-lg border border-gray-300 bg-white text-gray-900"
         }
         bodyClassName={() => "text-sm font-medium"}
         progressClassName="fancy-progress-bar"
